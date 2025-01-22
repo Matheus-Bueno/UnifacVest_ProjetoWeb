@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <h1>Exemplo de Loops</h1>
+
+    <script>
+        //for(indice; validação; incrementador){
+        //}
+
+        for (let x = 0; x < 5; x++) {
+            console.log("Valor de x = " + x)
+        }
+
+        let frutas = ["banana", "laranja", "kiwi", "uva", "maçã"]
+
+        for(const fruta of frutas){
+            console.log("Fruta da vez: " + fruta)
+        }
+        
+        for (const indiceFruta in frutas) {
+            console.log((indiceFruta) + " - fruta " + frutas[indiceFruta])
+        }
+
+        var x = 0
+        while (x < 10) {
+            console.log(x)
+            x++
+        }
+
+        var y = 0
+        do {
+            console.log("Valor autal da variavel " + y)
+            y++
+        } while (y < 5);
+
+    </script>
+</body>
+</html>
