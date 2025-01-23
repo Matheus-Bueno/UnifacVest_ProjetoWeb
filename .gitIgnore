@@ -1,1 +1,3 @@
-exemplo-node/node_modules
+exemplo-node/node_modules/
+node_modules/
+imc-user\node_modules
