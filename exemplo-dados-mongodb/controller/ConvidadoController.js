@@ -54,12 +54,7 @@ module.exports = class RoutesController {
             const id = req.params.id.trim(); // Remova espaços em branco
     
             console.log("ID recebido:", id);
-    
-            // Validação do ID
-            if (!ObjectId.isValid(id)) {
-                throw new Error("ID inválido");
-            }
-    
+                    
             // Busca o convidado pelo ID
             const convidado = await Convidado.listarEditar(id);
     
@@ -70,7 +65,7 @@ module.exports = class RoutesController {
     
             res.render("editar", { convidado });
         } catch (error) {
-            console.error("Erro em listarEditar:", error.message);
+            console.error("Erro no controller:", error.message);
             res.status(500).send("Erro ao buscar o convidado");
         }
     }
