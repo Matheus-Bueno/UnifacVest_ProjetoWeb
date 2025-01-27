@@ -1,12 +1,22 @@
 const express = require("express")
 
-const RoutesController = require("./RoutesController")
+const ConvidadoController = require("../controller/ConvidadoController")
 
 const router = express.Router()
 
-router.get("/", RoutesController.home)
-router.get("/hi", RoutesController.hi)
-router.get("/guest", RoutesController.guest)
 
+router.get("/", ConvidadoController.home)
+router.get("/hi", ConvidadoController.hi)
+router.get("/guest", ConvidadoController.guest)
+
+router.get("/cadastrar", ConvidadoController.cadastrar)
+router.post("/cadastrar", ConvidadoController.cadastrarPost)
+
+router.get("/listar", ConvidadoController.listar)
+
+router.get('/editar/:id', ConvidadoController.listarEditar)
+router.post('/editar', ConvidadoController.editar)
+
+//router.get("/excluir:id", ConvidadoController.excluir)
 
 module.exports = router
