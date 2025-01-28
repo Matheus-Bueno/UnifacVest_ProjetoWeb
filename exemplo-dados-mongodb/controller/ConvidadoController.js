@@ -49,8 +49,6 @@ module.exports = class RoutesController {
         res.render('editar', { convidado })
     }
 
-
-
     static async editar(req, res) {
 
         const id = req.body.id
@@ -63,6 +61,15 @@ module.exports = class RoutesController {
         res.redirect("/listar")
     }
 
+    static async excluir(req, res) {
+
+        const id = req.params.id
+        console.log(id + " Excluir")
+
+        const convidado = await Convidado.excluir(id)
+
+        res.redirect("/listar")
+    }
 
 
 }

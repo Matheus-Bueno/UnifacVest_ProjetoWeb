@@ -17,6 +17,6 @@ router.get("/listar", ConvidadoController.listar)
 router.get("/editar/:id", ConvidadoController.listarEditar)
 router.post("/editar", ConvidadoController.editar)
 
-//router.get("/excluir:id", ConvidadoController.excluir)
+router.get("/excluir/:id", ConvidadoController.excluir)
 
 module.exports = router

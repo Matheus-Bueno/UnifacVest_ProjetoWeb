@@ -24,6 +24,7 @@ class Convidado {
         return lista
     }
 
+    //tive que usar o new para funcionar, pq ? não sei
     static listarEditar(id) {
         //console.log(id + " id que chegou")
         //console.log(typeof id)
@@ -33,7 +34,13 @@ class Convidado {
 
     static async editar(id, nome, age, email) {
         const convidado = await conn.db().collection('convidados')
-            .updateOne({ _id: ObjectId(id) }, { $set: { nome: nome, age: age, email: email } })
+            .updateOne({ _id: new ObjectId(id) }, { $set: { nome: nome, age: age, email: email } })
+        return convidado
+    }
+
+    static async excluir(id){
+        const convidado = await conn.db().collection('convidados')
+            .deleteOne({_id : new ObjectId(id)  })
         return convidado
     }
 }
