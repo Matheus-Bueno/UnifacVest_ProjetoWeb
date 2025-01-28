@@ -14,8 +14,8 @@ router.post("/cadastrar", ConvidadoController.cadastrarPost)
 
 router.get("/listar", ConvidadoController.listar)
 
-router.get('/editar/:id', ConvidadoController.listarEditar)
-router.post('/editar', ConvidadoController.editar)
+router.get("/editar/:id", ConvidadoController.listarEditar)
+router.post("/editar", ConvidadoController.editar)
 
 //router.get("/excluir:id", ConvidadoController.excluir)
 

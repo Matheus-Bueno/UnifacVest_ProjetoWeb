@@ -24,29 +24,11 @@ class Convidado {
         return lista
     }
 
-    // static listarEditar(id) {
-    //     console.log(id + " id que chegou")
-    //     const convidado = conn.db().collection('convidados').findOne({ _id: objectId(id) })
-    //     return convidado
-    // }
-
-    static async listarEditar(id) {
-        try {
-            // Verifica se o ID é válido
-            if (!ObjectId.isValid(id)) {
-                throw new Error("ID inválido");
-            }
-
-            // Busca o convidado pelo ID
-            const convidado = await conn.db()
-                .collection('convidados')
-                .findOne({ _id: ObjectId(id) });
-
-            return convidado;
-        } catch (error) {
-            console.error("Erro ao buscar convidado:", error.message);
-            throw error;
-        }
+    static listarEditar(id) {
+        //console.log(id + " id que chegou")
+        //console.log(typeof id)
+        const convidado = conn.db().collection('convidados').findOne({ _id: new ObjectId(id) })
+        return convidado
     }
 
     static async editar(id, nome, age, email) {
