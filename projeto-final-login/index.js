@@ -1,6 +1,4 @@
 const express = require("express")
-const exphbs = require("express-handlebars")
-const session = require("express-session")
 const app = express()
 
 app.use(express.json())
@@ -8,13 +6,7 @@ app.use(express.urlencoded({
     extended: true
 }))
 
-app.engine('hbs', exphbs.engine({ extname: '.hbs'}))
-app.set('view engine', 'hbs')
-
-app.use('./public',express.static('public'))
-
-const rotas = require("./routers/rotas")
-app.use('./',rotas)
+const session = require("express-session")
 
 const umDia = 100*60*60*24
 app.use(session({
@@ -24,6 +16,18 @@ app.use(session({
     resave : false,
     name: "unplugged"
 }))
+
+const exphbs = require("express-handlebars")
+app.engine('hbs', exphbs.engine({ extname: '.hbs'}))
+app.set('view engine', 'hbs')
+
+app.use('./public',express.static('public'))
+app.get('/public', (req,res) =>{
+    res.send('<p>Conteudo estático</p>')
+})
+
+const rotas = require("./routers/rotas")
+app.use('/',rotas)
 
 
 app.listen(3000, ()=>{
