@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Sistema</title>
+</head>
+
+<body>
+
+    <div class="header">
+
+        <h1>Meu Sistema</h1>
+        <h2>
+            <strong>
+
+                {{#if msg}}
+                <span>Bem Vindo! Voce está {{{msg}}}</span>
+                {{else}}
+                <span>Faça o Login para poder acessar o nosso sistema</span>
+                {{/if}}
+
+            </strong>
+        </h2>
+    </div>
+
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <div>
+        {{{body}}}
+    </div>
+
+    <div class="footer">
+        <h2>RODAPÉ</h2>
+    </div>
+
+</body>
+
+</html>
