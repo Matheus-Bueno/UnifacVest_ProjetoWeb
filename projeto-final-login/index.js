@@ -29,6 +29,7 @@ app.get('/public', (req,res) =>{
 const rotas = require("./routers/rotas")
 app.use('/',rotas)
 
+const conexao = require("./db/conn")
 
 app.listen(3000, ()=>{
     console.log("Servidor Iniciando na Porta 3000")
